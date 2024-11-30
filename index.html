@@ -32,6 +32,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
+            flex-wrap: wrap;
         }
         h1 {
             font-size: 3em;
@@ -44,6 +45,7 @@
         .header-buttons {
             display: flex;
             gap: 15px;
+            margin-top: 20px;
         }
         .btn {
             display: inline-block;
@@ -55,6 +57,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-align: center;
         }
         .btn-primary {
             background-color: var(--accent-color-1);
@@ -84,24 +87,22 @@
             margin-bottom: 30px;
             color: var(--accent-color-2);
         }
-        .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         .project-card {
-            flex: 0 0 100%;
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 40px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
         }
         .project-card h3 {
             margin-top: 0;
@@ -112,34 +113,6 @@
             margin-bottom: 30px;
             font-size: 1.1em;
         }
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.2);
-            color: var(--text-color);
-            border: none;
-            padding: 15px;
-            cursor: pointer;
-            font-size: 24px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .carousel-button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-50%) scale(1.1);
-        }
-        .carousel-button-prev {
-            left: 20px;
-        }
-        .carousel-button-next {
-            right: 20px;
-        }
         footer {
             text-align: center;
             padding: 20px 0;
@@ -149,18 +122,35 @@
             color: rgba(255, 255, 255, 0.7);
         }
         @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
             header {
                 flex-direction: column;
-                align-items: flex-start;
-            }
-            .header-buttons {
-                margin-top: 20px;
+                align-items: center;
             }
             h1 {
                 font-size: 2.5em;
+                text-align: center;
+            }
+            .header-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
             }
             section {
-                padding: 30px;
+                padding: 30px 20px;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .project-card {
+                padding: 30px 20px;
+            }
+            .project-card h3 {
+                font-size: 1.8em;
             }
         }
     </style>
@@ -184,21 +174,17 @@
 
             <section id="projects">
                 <h2>Projects</h2>
-                <div class="carousel">
-                    <div class="carousel-inner">
-                        <div class="project-card">
-                            <h3>Remote Manager</h3>
-                            <p>A powerful tool that can shutdown or reboot your PCs from anywhere</p>
-                            <a href="https://rm.delg.cc" class="btn btn-primary" target="_blank">View Project</a>
-                        </div>
-                        <div class="project-card">
-                            <h3>Clipper</h3>
-                            <p>A new way of capturing gaming clips</p>
-                            <a href="#" class="btn btn-secondary" style="opacity: 0.7; cursor: not-allowed;">Coming Soon</a>
-                        </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Remote Manager</h3>
+                        <p>A powerful tool that can shutdown or reboot your PCs from anywhere</p>
+                        <a href="https://rm.delg.cc" class="btn btn-primary" target="_blank">View Project</a>
                     </div>
-                    <button class="carousel-button carousel-button-prev" aria-label="Previous project">&lt;</button>
-                    <button class="carousel-button carousel-button-next" aria-label="Next project">&gt;</button>
+                    <div class="project-card">
+                        <h3>Clipper</h3>
+                        <p>A new way of capturing gaming clips</p>
+                        <a href="#" class="btn btn-secondary" style="opacity: 0.7; cursor: not-allowed;">Coming Soon</a>
+                    </div>
                 </div>
             </section>
         </main>
@@ -207,29 +193,6 @@
             <p>&copy; 2024 DELG. All rights reserved.</p>
         </footer>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.querySelector('.carousel-inner');
-            const prevButton = document.querySelector('.carousel-button-prev');
-            const nextButton = document.querySelector('.carousel-button-next');
-            let currentIndex = 0;
-            const totalSlides = document.querySelectorAll('.project-card').length;
-
-            function showSlide(index) {
-                carousel.style.transform = `translateX(-${index * 100}%)`;
-            }
-
-            prevButton.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                showSlide(currentIndex);
-            });
-
-            nextButton.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                showSlide(currentIndex);
-            });
-        });
-    </script>
 </body>
 </html>
+
