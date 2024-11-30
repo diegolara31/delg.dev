@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELG - Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            --text-color: #ffffff;
+            --accent-color-1: #e94560;
+            --accent-color-2: #00adb5;
+            --card-bg-color: rgba(255, 255, 255, 0.1);
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #ffffff;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
         }
         .container {
             max-width: 1200px;
@@ -18,25 +28,66 @@
             padding: 20px;
         }
         header {
-            text-align: center;
-            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
         }
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3em;
+            margin: 0;
+            background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        nav {
-            margin-top: 20px;
+        .header-buttons {
+            display: flex;
+            gap: 15px;
         }
-        nav a {
-            color: #ffffff;
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            color: var(--text-color);
             text-decoration: none;
-            margin: 0 10px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-primary {
+            background-color: var(--accent-color-1);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+        .btn-secondary {
+            background-color: var(--accent-color-2);
+            box-shadow: 0 4px 15px rgba(0, 173, 181, 0.4);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+        main {
+            margin-top: 60px;
+        }
+        section {
+            margin-bottom: 80px;
+            background: var(--card-bg-color);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: var(--accent-color-2);
         }
         .carousel {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             overflow: hidden;
         }
@@ -46,47 +97,71 @@
         }
         .project-card {
             flex: 0 0 100%;
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
         .project-card h3 {
             margin-top: 0;
+            font-size: 2em;
+            color: var(--accent-color-1);
         }
-        .project-card a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: #4CAF50;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 4px;
+        .project-card p {
+            margin-bottom: 30px;
+            font-size: 1.1em;
         }
         .carousel-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.3);
-            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--text-color);
             border: none;
-            padding: 10px;
+            padding: 15px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 24px;
             border-radius: 50%;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
         }
         .carousel-button-prev {
-            left: 10px;
+            left: 20px;
         }
         .carousel-button-next {
-            right: 10px;
+            right: 20px;
         }
         footer {
             text-align: center;
             padding: 20px 0;
-            margin-top: 40px;
-            border-top: 1px solid #333;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header-buttons {
+                margin-top: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            section {
+                padding: 30px;
+            }
         }
     </style>
 </head>
@@ -94,14 +169,17 @@
     <div class="container">
         <header>
             <h1>DELG</h1>
-            <p>Develop | Explore | Learn | Grow</p>
+            <div class="header-buttons">
+                <a href="Diego_Lara_CV.pdf" class="btn btn-primary" target="_blank">View CV</a>
+                <a href="mailto:me@delg.cc" class="btn btn-secondary">Contact</a>
+            </div>
         </header>
 
         <main>
             <section id="about">
                 <h2>About Me</h2>
-                <p>With 3 years of programming experience in Python, Java, C++, and JavaScript, I have developed a strong foundation in software development and server management. My work spans diverse projects, including web and mobile application development as well as network and server administration.
-I excel at learning new technologies, adapting to various work environments, and collaborating effectively in teams. As a responsible and proactive individual, I am passionate about solving complex problems and delivering innovative solutions.</p>
+                <p>With 3 years of programming experience in Python, Java, C++, and JavaScript, I have developed a strong foundation in software development and server management. My work spans diverse projects, including web and mobile application development as well as network and server administration.</p>
+                <p>I excel at learning new technologies, adapting to various work environments, and collaborating effectively in teams. As a responsible and proactive individual, I am passionate about solving complex problems and delivering innovative solutions.</p>
             </section>
 
             <section id="projects">
@@ -111,33 +189,17 @@ I excel at learning new technologies, adapting to various work environments, and
                         <div class="project-card">
                             <h3>Remote Manager</h3>
                             <p>A powerful tool that can shutdown or reboot your PCs from anywhere</p>
-                            <a href="https://rm.delg.cc" target="_blank">View Project</a>
+                            <a href="https://rm.delg.cc" class="btn btn-primary" target="_blank">View Project</a>
                         </div>
                         <div class="project-card">
                             <h3>Clipper</h3>
                             <p>A new way of capturing gaming clips</p>
-                            <a href="#" class="disabled">Coming Soon</a>
+                            <a href="#" class="btn btn-secondary" style="opacity: 0.7; cursor: not-allowed;">Coming Soon</a>
                         </div>
-<!--                         <div class="project-card">
-                            <h3>Project Y</h3>
-                            <p>Innovative solution addressing real-world challenges.</p>
-                            <a href="#" class="disabled">Coming Soon</a>
-                        </div>
-                        <div class="project-card">
-                            <h3>Project Z</h3>
-                            <p>Cutting-edge technology meets user-friendly design.</p>
-                            <a href="#" class="disabled">Coming Soon</a>
-                        </div> -->
                     </div>
-                    <button class="carousel-button carousel-button-prev">&lt;</button>
-                    <button class="carousel-button carousel-button-next">&gt;</button>
+                    <button class="carousel-button carousel-button-prev" aria-label="Previous project">&lt;</button>
+                    <button class="carousel-button carousel-button-next" aria-label="Next project">&gt;</button>
                 </div>
-            </section>
-
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>Feel free to reach out to me for collaborations or inquiries.</p>
-                <p>Email: me@delg.cc</p>
             </section>
         </main>
 
@@ -152,18 +214,19 @@ I excel at learning new technologies, adapting to various work environments, and
             const prevButton = document.querySelector('.carousel-button-prev');
             const nextButton = document.querySelector('.carousel-button-next');
             let currentIndex = 0;
+            const totalSlides = document.querySelectorAll('.project-card').length;
 
             function showSlide(index) {
                 carousel.style.transform = `translateX(-${index * 100}%)`;
             }
 
             prevButton.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + 4) % 4;
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 showSlide(currentIndex);
             });
 
             nextButton.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % 4;
+                currentIndex = (currentIndex + 1) % totalSlides;
                 showSlide(currentIndex);
             });
         });
