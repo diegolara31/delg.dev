@@ -3,200 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELG - Developer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-gradient: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-            --text-color: #ffffff;
-            --accent-color-1: #e94560;
-            --accent-color-2: #00adb5;
-            --card-bg-color: rgba(255, 255, 255, 0.1);
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: var(--bg-gradient);
-            color: var(--text-color);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            flex-wrap: wrap;
-        }
-        h1 {
-            font-size: 3em;
-            margin: 0;
-            background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .header-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            color: var(--text-color);
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-        }
-        .btn-primary {
-            background-color: var(--accent-color-1);
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
-        }
-        .btn-secondary {
-            background-color: var(--accent-color-2);
-            box-shadow: 0 4px 15px rgba(0, 173, 181, 0.4);
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-        }
-        main {
-            margin-top: 60px;
-        }
-        section {
-            margin-bottom: 80px;
-            background: var(--card-bg-color);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            color: var(--accent-color-2);
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .project-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-        }
-        .project-card h3 {
-            margin-top: 0;
-            font-size: 2em;
-            color: var(--accent-color-1);
-        }
-        .project-card p {
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 60px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-            h1 {
-                font-size: 2.5em;
-                text-align: center;
-            }
-            .header-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            .btn {
-                width: 100%;
-            }
-            section {
-                padding: 30px 20px;
-            }
-            h2 {
-                font-size: 2em;
-            }
-            .project-card {
-                padding: 30px 20px;
-            }
-            .project-card h3 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+    <title>DELG | Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>DELG</h1>
-            <div class="header-buttons">
-                <a href="Diego_Lara_CV.pdf" class="btn btn-primary" target="_blank">View CV</a>
-                <a href="mailto:me@delg.cc" class="btn btn-secondary">Contact</a>
-            </div>
-        </header>
+    <header>
+        <div class="container">
+            <div class="logo">DELG</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" aria-label="Toggle dark/light mode">
+                <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+                <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+            </button>
+        </div>
+    </header>
 
-        <main>
-            <section id="about">
-                <h2>About Me</h2>
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Hello, I'm <span class="highlight">Diego</span></h1>
+            <p class="subtitle">Software Developer & Server Administrator</p>
+            <a href="Diego_Lara_CV.pdf" class="cv-button" download>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg>
+                Download CV
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
                 <p>With 3 years of programming experience in Python, Java, C++, and JavaScript, I have developed a strong foundation in software development and server management. My work spans diverse projects, including web and mobile application development as well as network and server administration.</p>
                 <p>I excel at learning new technologies, adapting to various work environments, and collaborating effectively in teams. As a responsible and proactive individual, I am passionate about solving complex problems and delivering innovative solutions.</p>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Remote Manager</h3>
-                        <p>A powerful tool that can shutdown or reboot your PCs from anywhere</p>
-                        <a href="https://rm.delg.cc" class="btn btn-primary" target="_blank">View Project</a>
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                     </div>
-                    <div class="project-card">
-                        <h3>DevTools</h3>
-                        <p>Simplify your development workflow by managing MongoDB and Nginx with an intuitive GUI on Windows systems</p>
-                        <a href="https://devtools.delg.dev" class="btn btn-secondary" target="_blank">View Project</a>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                     </div>
-                    <div class="project-card">
-                        <h3>Notas</h3>
-                        <p>A modern note-taking app for developers and creatives.</p>
-                        <a href="https://notes.delg.dev" class="btn btn-primary" target="_blank">View Project</a>
+                    <h3>Java</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                    </div>
+                    <h3>C++</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                    </div>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="M10 4v4"></path><path d="M2 8h20"></path><path d="M6 12v4"></path><path d="M12 12v4"></path><path d="M18 12v4"></path></svg>
+                    </div>
+                    <h3>Server Management</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5a5 5 0 0 0-5-5H7a5 5 0 0 0-5 5Z"></path><circle cx="7" cy="13" r="1"></circle></svg>
+                    </div>
+                    <h3>Network Administration</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>REMOTE MANAGER</h3>
+                        <p>A powerful tool that can shutdown or reboot your devices remotely.</p>
+                        <a href="https://rm.delg.dev" class="project-link" target="_blank">
+                            rm.delg.dev
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+                        </a>
                     </div>
                 </div>
-            </section>
-        </main>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>DevTools</h3>
+                        <p>Simplify your development workflow by managing MongoDB and Nginx with an intuitive GUI on Windows systems.</p>
+                        <a href="https://devtools.delg.dev" class="project-link" target="_blank">
+                            devtools.delg.dev
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Notas</h3>
+                        <p>A modern note-taking app for developers and creatives.</p>
+                        <a href="https://notes.delg.dev" class="project-link" target="_blank">
+                            notes.delg.dev
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2024 DELG. All rights reserved.</p>
-        </footer>
-    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DELG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
