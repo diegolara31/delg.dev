@@ -3,88 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELG | Developer Portfolio</title>
+    <title>Diego Lara | Software Developer</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <header>
         <div class="container">
-            <div class="logo">DELG</div>
+            <div class="logo">
+                <span class="logo-bracket">{</span> DELG <span class="logo-bracket">}</span>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             <button id="theme-toggle" aria-label="Toggle dark/light mode">
-                <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
-                <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                <i class="fas fa-moon moon-icon"></i>
+                <i class="fas fa-sun sun-icon"></i>
+            </button>
+            <button id="lang-toggle" aria-label="Toggle language">
+                <span class="lang-text">EN</span>
+                <i class="fas fa-globe"></i>
             </button>
         </div>
     </header>
 
-    <section id="hero" class="hero">
+    <section id="home" class="hero">
         <div class="container">
-            <h1>Hello, I'm <span class="highlight">Diego</span></h1>
-            <p class="subtitle">Software Developer & Server Administrator</p>
-            <a href="Diego_Lara_CV.pdf" class="cv-button" download>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg>
-                Download CV
-            </a>
+            <div class="hero-content">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-button close"></span>
+                            <span class="terminal-button minimize"></span>
+                            <span class="terminal-button maximize"></span>
+                        </div>
+                        <div class="terminal-title"><span class="en">diego@delg.dev: ~</span><span class="es">diego@delg.dev: ~</span></div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt"><span class="en">diego@delg.dev:~$</span><span class="es">diego@delg.dev:~$</span></span>
+                            <span id="typing-text"></span>
+                            <span class="terminal-cursor">|</span>
+                        </div>
+                        <div class="terminal-output">
+                            <p><span class="en">Hello, I'm</span><span class="es">Hola, soy</span> <span class="highlight">Diego Lara</span></p>
+                            <p><span class="en">Software Developer & SysAdmin</span><span class="es">Desarrollador de Software & SysAdmin</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="Diego_Lara_CV.pdf" class="btn primary-btn" download>
+                        <i class="fas fa-download"></i> <span class="en">Download CV</span><span class="es">Descargar CV</span>
+                    </a>
+                    <a href="#contact" class="btn secondary-btn">
+                        <i class="fas fa-envelope"></i> <span class="en">Contact Me</span><span class="es">Contáctame</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
-            <h2>About Me</h2>
+            <div class="section-header">
+                <h2><span class="section-number">01.</span> <span class="en">About Me</span><span class="es">Sobre Mí</span></h2>
+            </div>
             <div class="about-content">
-                <p>With 3 years of programming experience in Python, Java, C++, and JavaScript, I have developed a strong foundation in software development and server management. My work spans diverse projects, including web and mobile application development as well as network and server administration.</p>
-                <p>I excel at learning new technologies, adapting to various work environments, and collaborating effectively in teams. As a responsible and proactive individual, I am passionate about solving complex problems and delivering innovative solutions.</p>
+                <div class="about-text">
+                    <p class="en">With 3 years of programming experience in Python, Java, C++, and JavaScript, I have developed a strong foundation in software development and server management. My work spans diverse projects, including web and mobile application development as well as network and server administration.</p>
+                    <p class="es">Con 3 años de experiencia en programación en Python, Java, C++ y JavaScript, he desarrollado una sólida base en desarrollo de software y administración de servidores. Mi trabajo abarca diversos proyectos, incluyendo desarrollo de aplicaciones web y móviles, así como administración de redes y servidores.</p>
+                    <p class="en">I excel at learning new technologies, adapting to various work environments, and collaborating effectively in teams. As a responsible and proactive individual, I am passionate about solving complex problems and delivering innovative solutions.</p>
+                    <p class="es">Sobresalgo en el aprendizaje de nuevas tecnologías, adaptándome a diversos entornos de trabajo y colaborando eficazmente en equipos. Como individuo responsable y proactivo, me apasiona resolver problemas complejos y entregar soluciones innovadoras.</p>
+                    <div class="code-snippet">
+                        <pre><code>
+const diego = {
+  education: "<span class="en">Software Engineering</span><span class="es">Ingeniería de Software</span>",
+  location: "<span class="en">Mexico</span><span class="es">México</span>",
+  languages: ["Python", "Java", "C++", "JavaScript"],
+  interests: [
+    "<span class="en">Web Development</span><span class="es">Desarrollo Web</span>", 
+    "<span class="en">Server Administration</span><span class="es">Administración de Servidores</span>", 
+    "<span class="en">Network Security</span><span class="es">Seguridad de Redes</span>"
+  ],
+  currentFocus: "<span class="en">Building scalable web applications</span><span class="es">Construyendo aplicaciones web escalables</span>",
+  funFact: "<span class="en">I can solve a Rubik's cube in under 20 seconds</span><span class="es">Puedo resolver un cubo de Rubik en menos de 20 segundos</span>"
+ };
+                        </code></pre>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="skills" class="skills">
         <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            <div class="section-header">
+                <h2><span class="section-number">02.</span> <span class="en">Skills</span><span class="es">Habilidades</span></h2>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3><span class="en">Programming Languages</span><span class="es">Lenguajes de Programación</span></h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-python"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Python</span><span class="es">Python</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-java"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Java</span><span class="es">Java</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-code"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">C++</span><span class="es">C++</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-js"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">JavaScript</span><span class="es">JavaScript</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Node.js</span><span class="es">Node.js</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">SQL</span><span class="es">SQL</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Python</h3>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                <div class="skills-category">
+                    <h3><span class="en">Technologies & Tools</span><span class="es">Tecnologías y Herramientas</span></h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-server"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Server Management</span><span class="es">Gestión de Servidores</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Network Administration</span><span class="es">Administración de Redes</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">HTML5</span><span class="es">HTML5</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">CSS3</span><span class="es">CSS3</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-linux"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Linux</span><span class="es">Linux</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-windows"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Windows</span><span class="es">Windows</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-docker"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Docker</span><span class="es">Docker</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Git</span><span class="es">Git</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Cybersecurity</span><span class="es">Ciberseguridad</span></h4>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Java</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                    </div>
-                    <h3>C++</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                    </div>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="M10 4v4"></path><path d="M2 8h20"></path><path d="M6 12v4"></path><path d="M12 12v4"></path><path d="M18 12v4"></path></svg>
-                    </div>
-                    <h3>Server Management</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5a5 5 0 0 0-5-5H7a5 5 0 0 0-5 5Z"></path><circle cx="7" cy="13" r="1"></circle></svg>
-                    </div>
-                    <h3>Network Administration</h3>
                 </div>
             </div>
         </div>
@@ -92,37 +272,104 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2>Projects</h2>
+            <div class="section-header">
+                <h2><span class="section-number">03.</span> <span class="en">Projects</span><span class="es">Proyectos</span></h2>
+            </div>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-content">
-                        <h3>REMOTE MANAGER</h3>
-                        <p>A powerful tool that can shutdown or reboot your devices remotely.</p>
-                        <a href="https://rm.delg.dev" class="project-link" target="_blank">
-                            rm.delg.dev
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
-                        </a>
+                        <div class="project-header">
+                            <div class="project-folder">
+                                <i class="far fa-folder-open"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://rm.delg.dev" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Remote Manager</h3>
+                        <p class="project-description en">A powerful tool that can shutdown or reboot your devices remotely with secure authentication and device management.</p>
+                        <p class="project-description es">Una potente herramienta que puede apagar o reiniciar tus dispositivos de forma remota con autenticación segura y gestión de dispositivos.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                            <span>Electron</span>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-content">
-                        <h3>DevTools</h3>
-                        <p>Simplify your development workflow by managing MongoDB and Nginx with an intuitive GUI on Windows systems.</p>
-                        <a href="https://devtools.delg.dev" class="project-link" target="_blank">
-                            devtools.delg.dev
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
-                        </a>
+                        <div class="project-header">
+                            <div class="project-folder">
+                                <i class="far fa-folder-open"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://devtools.delg.dev" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">DevTools</h3>
+                        <p class="project-description en">Simplify your development workflow by managing MongoDB and Nginx with an intuitive GUI on Windows systems.</p>
+                        <p class="project-description es">Simplifica tu flujo de trabajo de desarrollo gestionando MongoDB y Nginx con una interfaz gráfica intuitiva en sistemas Windows.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>tkinter</span>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-content">
-                        <h3>Notas</h3>
-                        <p>A modern note-taking app for developers and creatives.</p>
-                        <a href="https://notes.delg.dev" class="project-link" target="_blank">
-                            notes.delg.dev
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
-                        </a>
+                        <div class="project-header">
+                            <div class="project-folder">
+                                <i class="far fa-folder-open"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://notes.delg.dev" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Notas</h3>
+                        <p class="project-description en">A modern note-taking app for developers and creatives with markdown support and cloud synchronization.</p>
+                        <p class="project-description es">Una moderna aplicación de toma de notas para desarrolladores y creativos con soporte para markdown y sincronización en la nube.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                            <span>Bootstrap</span>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="section-number">04.</span> <span class="en">Contact</span><span class="es">Contacto</span></h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p class="en">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
+                    <p class="es">Actualmente estoy buscando nuevas oportunidades. Ya sea que tengas una pregunta o simplemente quieras saludar, ¡haré lo posible por responderte!</p>
+                </div>
+                <div class="contact-cta">
+                    <a href="mailto:me@delg.dev" class="btn primary-btn">
+                        <i class="fas fa-envelope"></i> <span class="en">Say Hello</span><span class="es">Email</span>
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/diego-lara31/" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://x.com/delg3113" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/diegolara31" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -130,11 +377,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 DELG. All rights reserved.</p>
+            <p><span class="en">Designed & Built by</span><span class="es">Diseñado y Construido por</span> Diego Lara</p>
+            <p>&copy; 2025 DELG. <span class="en">All rights reserved.</span><span class="es">Todos los derechos reservados.</span></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
