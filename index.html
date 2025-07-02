@@ -6,7 +6,6 @@
     <title>Diego Lara | Software Developer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="cursor"></div>
@@ -27,12 +26,12 @@
                 </ul>
             </nav>
             <button id="theme-toggle" aria-label="Toggle dark/light mode">
-                <i class="fas fa-moon moon-icon"></i>
-                <i class="fas fa-sun sun-icon"></i>
+                <span class="iconify moon-icon" data-icon="tabler:moon"></span>
+                <span class="iconify sun-icon" data-icon="tabler:sun"></span>
             </button>
             <button id="lang-toggle" aria-label="Toggle language">
                 <span class="lang-text">EN</span>
-                <i class="fas fa-globe"></i>
+                <span class="iconify" data-icon="tabler:world"></span>
             </button>
         </div>
     </header>
@@ -63,10 +62,10 @@
                 </div>
                 <div class="hero-cta">
                     <a href="Diego_Lara_CV.pdf" class="btn primary-btn" target="_blank">
-                        <i class="fas fa-file-pdf"></i> <span class="en">View CV</span><span class="es">Ver CV</span>
+                        <span class="iconify" data-icon="tabler:file-type-pdf"></span> <span class="en">View CV</span><span class="es">Ver CV</span>
                     </a>
                     <a href="" class="btn secondary-btn">
-                        <i class="fas fa-envelope"></i> <span class="en">Contact Me</span><span class="es">Contáctame</span>
+                        <span class="iconify" data-icon="tabler:mail"></span> <span class="en">Contact Me</span><span class="es">Contáctame</span>
                     </a>
                 </div>
             </div>
@@ -90,12 +89,12 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="en">Software engineer with experience in developing competitive robotics software and a portfolio of Android applications published on the Google Play Store. Also experienced in technical support, solving complex software and network problems.</p>
-                    <p class="es">Ingeniero de software con experiencia en el desarrollo de software para robótica de competición y un portafolio de aplicaciones Android publicadas en la Google Play Store. También con experiencia en soporte técnico, resolviendo problemas complejos de software y redes.</p>
+                    <p class="en">Software engineer with experience in developing competitive robotics software and a portfolio of Android applications published on the Google Play Store. Also experienced in technical support, solving complex software and network problems, efficiently resolving an average of 15+ daily technical incidents for corporate clients.</p>
+                    <p class="es">Ingeniero de software con experiencia en el desarrollo de software para robótica de competición y un portafolio de aplicaciones Android publicadas en la Google Play Store. También con experiencia en soporte técnico, resolviendo problemas complejos de software y redes, resolviendo eficientemente un promedio de 15+ incidencias técnicas diarias para clientes corporativos.</p>
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <div class="highlight-icon">
-                                <i class="fas fa-graduation-cap"></i>
+                                <span class="iconify" data-icon="tabler:school"></span>
                             </div>
                             <div class="highlight-content">
                                 <h4><span class="en">Education</span><span class="es">Educación</span></h4>
@@ -104,7 +103,7 @@
                         </div>
                         <div class="highlight-item">
                             <div class="highlight-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="iconify" data-icon="tabler:map-pin"></span>
                             </div>
                             <div class="highlight-content">
                                 <h4><span class="en">Location</span><span class="es">Ubicación</span></h4>
@@ -113,7 +112,7 @@
                         </div>
                         <div class="highlight-item">
                             <div class="highlight-icon">
-                                <i class="fas fa-rocket"></i>
+                                <span class="iconify" data-icon="tabler:rocket"></span>
                             </div>
                             <div class="highlight-content">
                                 <h4><span class="en">Current Focus</span><span class="es">Enfoque Actual</span></h4>
@@ -122,7 +121,7 @@
                         </div>
                         <div class="highlight-item">
                             <div class="highlight-icon">
-                                <i class="fas fa-trophy"></i>
+                                <span class="iconify" data-icon="tabler:trophy"></span>
                             </div>
                             <div class="highlight-content">
                                 <h4><span class="en">Recognitions</span><span class="es">Reconocimientos</span></h4>
@@ -135,31 +134,122 @@
         </div>
     </section>
 
+    <section id="experience" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="section-number">02.</span> <span class="en">Experience</span><span class="es">Experiencia</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <span class="iconify" data-icon="tabler:briefcase"></span>
+                            </div>
+                            <div class="highlight-content">
+                                <h4><span class="en">Technical Support Agent</span><span class="es">Agente de Soporte Técnico</span></h4>
+                                <p><span class="en">Banorte</span><span class="es">Banorte</span></p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <span class="iconify" data-icon="tabler:robot"></span>
+                            </div>
+                            <div class="highlight-content">
+                                <h4><span class="en">Software Developer</span><span class="es">Desarrollador de Software</span></h4>
+                                <p><span class="en">Tigres 6652 Robotics Team</span><span class="es">Equipo de Robótica Tigres 6652</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header">
-                <h2><span class="section-number">02.</span> <span class="en">Skills</span><span class="es">Habilidades</span></h2>
+                <h2><span class="section-number">03.</span> <span class="en">Skills</span><span class="es">Habilidades</span></h2>
             </div>
             <div class="skills-content">
                 <div class="skills-category">
                     <h3><span class="en">Languages</span><span class="es">Lenguajes de Programación</span></h3>
                     <div class="skills-grid">
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-java"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:javascript"></span></div>
+                            <div class="skill-info">
+                                <h4><span class="en">JavaScript</span><span class="es">JavaScript</span></h4>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:html-5"></span></div>
+                            <div class="skill-info">
+                                <h4><span class="en">HTML</span><span class="es">HTML</span></h4>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:css-3"></span></div>
+                            <div class="skill-info">
+                                <h4><span class="en">CSS</span><span class="es">CSS</span></h4>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:c-plusplus"></span></div>
+                            <div class="skill-info">
+                                <h4><span class="en">C++</span><span class="es">C++</span></h4>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:mysql"></span></div>
+                            <div class="skill-info">
+                                <h4><span class="en">SQL</span><span class="es">SQL</span></h4>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:java"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">Java</span><span class="es">Java</span></h4>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-python"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:python"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">Python</span><span class="es">Python</span></h4>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:nodejs-icon"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">Node.js</span><span class="es">Node.js</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3><span class="en">Backend & Frameworks</span><span class="es">Backend y Frameworks</span></h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:nodejs-icon"></span></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Node.js</span><span class="es">Node.js</span></h4>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:bun"></span></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Bun</span><span class="es">Bun</span></h4>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:nextjs-icon"></span></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Next.js</span><span class="es">Next.js</span></h4>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:vue"></span></div>
+                            <div class="skill-info">
+                                <h4><span class="en">Vue.js</span><span class="es">Vue.js</span></h4>
                             </div>
                         </div>
                     </div>
@@ -168,49 +258,49 @@
                     <h3><span class="en">DevOps, Cloud & Tools</span><span class="es">DevOps, Cloud y Herramientas</span></h3>
                     <div class="skills-grid">
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-linux"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:linux-tux"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">Linux</span><span class="es">Linux</span></h4>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-docker"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:docker-icon"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">Docker</span><span class="es">Docker</span></h4>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-dharmachakra"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:kubernetes"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">Kubernetes</span><span class="es">Kubernetes</span></h4>
                             </div>
                         </div>
                          <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-aws"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:aws"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">AWS</span><span class="es">AWS</span></h4>
                             </div>
                         </div>
                          <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-google"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:google-cloud"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">GCP</span><span class="es">GCP</span></h4>
                             </div>
                         </div>
                          <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-digital-ocean"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:digital-ocean"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">Digital Ocean</span><span class="es">Digital Ocean</span></h4>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-archive"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:aws-s3"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">S3</span><span class="es">S3</span></h4>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:git-icon"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">Git</span><span class="es">Git</span></h4>
                             </div>
@@ -221,19 +311,19 @@
                     <h3><span class="en">Databases</span><span class="es">Bases de Datos</span></h3>
                     <div class="skills-grid">
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:mongodb-icon"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">MongoDB</span><span class="es">MongoDB</span></h4>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:postgresql"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">PostgreSQL</span><span class="es">PostgreSQL</span></h4>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-icon"><span class="iconify" data-icon="logos:mysql"></span></div>
                             <div class="skill-info">
                                 <h4><span class="en">MySQL</span><span class="es">MySQL</span></h4>
                             </div>
@@ -247,27 +337,30 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-                <h2><span class="section-number">03.</span> <span class="en">Projects</span><span class="es">Proyectos</span></h2>
+                <h2><span class="section-number">04.</span> <span class="en">Projects</span><span class="es">Proyectos</span></h2>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-content">
                         <div class="project-header">
                             <div class="project-folder">
-                                <i class="far fa-folder-open"></i>
+                                <span class="iconify" data-icon="tabler:folder-open"></span>
                             </div>
                             <div class="project-links">
-                                <a href="https://play.google.com/store/apps/developer?id=DELG" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
+                                <a href="https://rm.delg.dev" target="_blank" class="project-link">
+                                    <span class="iconify" data-icon="tabler:external-link"></span>
                                 </a>
                             </div>
                         </div>
-                        <h3 class="project-title"><span class="en">Android Applications Portfolio</span><span class="es">Portafolio de Aplicaciones Android</span></h3>
-                        <p class="project-description en">Portfolio of Android applications published on the Google Play Store since 2019.</p>
-                        <p class="project-description es">Portafolio de aplicaciones Android publicadas en la Google Play Store desde 2019.</p>
+                        <h3 class="project-title"><span class="en">Remote Manager</span><span class="es">Administrador Remoto</span></h3>
+                        <p class="project-description en">A powerful web-based solution for managing remote servers, workstations, and IoT devices from anywhere in the world.</p>
+                        <p class="project-description es">Una potente solución web para administrar servidores remotos, estaciones de trabajo y dispositivos IoT desde cualquier parte del mundo.</p>
                         <div class="project-tech">
-                            <span>Java</span>
+                            <span>Vue</span>
+                            <span>Electron</span>
                             <span>Android</span>
+                            <span>NodeJS</span>
+                            <span>MongoDB</span>
                         </div>
                     </div>
                 </div>
@@ -275,17 +368,60 @@
                     <div class="project-content">
                         <div class="project-header">
                             <div class="project-folder">
-                                <i class="far fa-folder-open"></i>
+                                <span class="iconify" data-icon="tabler:folder-open"></span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/diegolara31/mongo-win" target="_blank" class="project-link">
+                                    <span class="iconify" data-icon="tabler:external-link"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title"><span class="en">Mongo-Win</span><span class="es">Mongo-Win</span></h3>
+                        <p class="project-description en">An alternative to XAMP but using MongoDB.</p>
+                        <p class="project-description es">Una alternativa a XAMP pero usando MongoDB.</p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-folder">
+                                <span class="iconify" data-icon="tabler:folder-open"></span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://chat.delg.dev" target="_blank" class="project-link">
+                                    <span class="iconify" data-icon="tabler:external-link"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title"><span class="en">DELG Chat</span><span class="es">DELG Chat</span></h3>
+                        <p class="project-description en">An AI Chat for developers with access to multiple LLMs without the complexity of handling multiple sources and keys.</p>
+                        <p class="project-description es">Un Chat con IA para desarrolladores con acceso a múltiples LLMs sin la complejidad de manejar múltiples fuentes y claves.</p>
+                        <div class="project-tech">
+                            <span>Vue</span>
+                            <span>NodeJS</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-folder">
+                                <span class="iconify" data-icon="tabler:folder-open"></span>
                             </div>
                             <div class="project-links">
                             </div>
                         </div>
-                        <h3 class="project-title"><span class="en">Competition Robotics Software</span><span class="es">Desarrollo de Software para Robótica de Competición</span></h3>
-                        <p class="project-description en">As part of the Tigres 6652 team, developed software for FIRST Robotics Competition and National Tournaments (2021-2022), achieving victories in national and international tournaments.</p>
-                        <p class="project-description es">Como miembro del equipo Tigres 6652, desarrollé software para la Competencia de Robótica FIRST y Torneos Nacionales (2021-2022), logrando victorias en torneos nacionales e internacionales.</p>
+                        <h3 class="project-title"><span class="en">DELG-DB (Coming Soon)</span><span class="es">DELG-DB (Próximamente)</span></h3>
+                        <p class="project-description en">An ultra fast database with the ability to migrate between postgres and mongodb without rewriting code.</p>
+                        <p class="project-description es">Una base de datos ultrarrápida con la capacidad de migrar entre PostgreSQL y MongoDB sin reescribir código.</p>
                         <div class="project-tech">
-                            <span>C++</span>
-                            <span>Java</span>
+                            <span>Go</span>
+                            <span>NodeJS</span>
                         </div>
                     </div>
                 </div>
@@ -296,7 +432,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2><span class="section-number">04.</span> <span class="en">Contact</span><span class="es">Contacto</span></h2>
+                <h2><span class="section-number">05.</span> <span class="en">Contact</span><span class="es">Contacto</span></h2>
             </div>
             <div class="contact-content">
                 <div class="contact-text">
@@ -305,15 +441,15 @@
                 </div>
                 <div class="contact-cta">
                     <a href="mailto:me@delg.dev" class="btn primary-btn">
-                        <i class="fas fa-envelope"></i> <span class="en">Say Hello</span><span class="es">Email</span>
+                        <span class="iconify" data-icon="tabler:mail"></span> <span class="en">Say Hello</span><span class="es">Email</span>
                     </a>
                 </div>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/diego-lara31/" class="social-link">
-                        <i class="fab fa-linkedin-in"></i>
+                        <span class="iconify" data-icon="tabler:brand-linkedin"></span>
                     </a>
                     <a href="https://github.com/diegolara31" class="social-link">
-                        <i class="fab fa-github"></i>
+                        <span class="iconify" data-icon="tabler:brand-github"></span>
                     </a>
                 </div>
             </div>
@@ -328,5 +464,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </body>
 </html>
