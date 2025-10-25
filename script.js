@@ -99,21 +99,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // Language toggle functionality
   const langToggle = document.getElementById("lang-toggle");
   const langText = langToggle.querySelector(".lang-text");
-  
+
+  function syncHtmlLangAttribute() {
+    const isSpanish = document.body.classList.contains("spanish");
+    document.documentElement.lang = isSpanish ? "es" : "en";
+  }
+
+  function updateCVLinkForLanguage() {
+    const cvLink = document.querySelector(".cv-link");
+    if (!cvLink) return;
+    const isSpanish = document.body.classList.contains("spanish");
+    cvLink.href = isSpanish ? "Diego_Lara_CV.pdf" : "Diego_Lara_CV_ENG.pdf";
+  }
+
   // Check for saved language preference
   const currentLang = localStorage.getItem("language") || "en";
-  
-  // Apply the language
+
+  // Apply the language preference on load
   if (currentLang === "es") {
     document.body.classList.add("spanish");
     langText.textContent = "ES";
+  } else {
+    langText.textContent = "EN";
   }
-  
+  syncHtmlLangAttribute();
+  updateCVLinkForLanguage();
+
   // Toggle language when button is clicked
   langToggle.addEventListener("click", () => {
     document.body.classList.toggle("spanish");
-    
-    // Update button text
+
+    // Update button text and persist preference
     if (document.body.classList.contains("spanish")) {
       langText.textContent = "ES";
       localStorage.setItem("language", "es");
@@ -121,6 +137,10 @@ document.addEventListener("DOMContentLoaded", () => {
       langText.textContent = "EN";
       localStorage.setItem("language", "en");
     }
+
+    // Keep <html lang> and CV link in sync
+    syncHtmlLangAttribute();
+    updateCVLinkForLanguage();
   });
 
   // Smooth scrolling for navigation links

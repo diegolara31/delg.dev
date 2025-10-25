@@ -18,11 +18,11 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="" class="nav-link active">Home</a></li>
-                    <li><a href="" class="nav-link">About</a></li>
-                    <li><a href="" class="nav-link">Skills</a></li>
-                    <li><a href="" class="nav-link">Projects</a></li>
-                    <li><a href="" class="nav-link">Contact</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             <button id="theme-toggle" aria-label="Toggle dark/light mode">
@@ -64,7 +64,7 @@
                     <a href="Diego_Lara_CV_ENG.pdf" class="btn primary-btn cv-link" target="_blank">
                         <span class="iconify" data-icon="tabler:file-type-pdf"></span> <span class="en">View CV</span><span class="es">Ver CV</span>
                     </a>
-                    <a href="" class="btn secondary-btn">
+                    <a href="#contact" class="btn secondary-btn">
                         <span class="iconify" data-icon="tabler:mail"></span> <span class="en">Contact Me</span><span class="es">Contáctame</span>
                     </a>
                 </div>
@@ -416,24 +416,5 @@
 
     <script src="script.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <script>
-        // Update CV link based on language
-        function updateCVLink() {
-            const cvLink = document.querySelector('.cv-link');
-            const isSpanish = document.documentElement.lang === 'es';
-            cvLink.href = isSpanish ? 'Diego_Lara_CV.pdf' : 'Diego_Lara_CV_ENG.pdf';
-        }
-
-        // Listen for language toggle
-        const langToggle = document.getElementById('lang-toggle');
-        if (langToggle) {
-            langToggle.addEventListener('click', function() {
-                setTimeout(updateCVLink, 100);
-            });
-        }
-
-        // Set initial CV link
-        updateCVLink();
-    </script>
 </body>
 </html>
