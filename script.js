@@ -216,6 +216,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Run once on page load
   animateOnScroll();
 
+  // Preload custom Bluey "¡Bingo!" sound if available
+  let bingoAudio = null;
+  try {
+    // Coloca tu archivo de audio en la raíz (por ejemplo: bingo-bluey.mp3)
+    bingoAudio = new Audio("bingo-bluey.mp3");
+  } catch (e) {
+    bingoAudio = null;
+  }
+
   // Easter Egg: Keepy Uppy style balloons on logo taps
   const logo = document.querySelector(".logo");
   if (logo) {
@@ -226,7 +235,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let balloonsActive = false;
 
     function playBingoSound() {
-      // Prefer voice "¡Bingo!" if available
+      // 1. Si existe el audio de Bluey, úsalo SIEMPRE
+      if (bingoAudio) {
+        try {
+          // Reinicia al inicio para que se pueda repetir en varios globos
+          bingoAudio.currentTime = 0;
+          bingoAudio.play();
+          return;
+        } catch (e) {
+          // Si por alguna razón falla (autoplay, etc), continuamos a los fallbacks
+        }
+      }
+
+      // 2. Fallback: voz sintética "¡Bingo!"
       if ("speechSynthesis" in window) {
         const isSpanish = document.body.classList.contains("spanish");
         const utterance = new SpeechSynthesisUtterance("¡Bingo!");
@@ -235,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Fallback simple tone
+      // 3. Último recurso: tono simple
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
       if (AudioCtx) {
         const ctx = new AudioCtx();
