@@ -215,4 +215,175 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Run once on page load
   animateOnScroll();
+
+  // Easter Egg: Keepy Uppy style balloons on logo taps
+  const logo = document.querySelector(".logo");
+  if (logo) {
+    const REQUIRED_TAPS = 5;
+    const TAP_WINDOW_MS = 1200;
+    let tapCount = 0;
+    let firstTapTime = 0;
+    let balloonsActive = false;
+
+    function playBingoSound() {
+      // Prefer voice "¡Bingo!" if available
+      if ("speechSynthesis" in window) {
+        const isSpanish = document.body.classList.contains("spanish");
+        const utterance = new SpeechSynthesisUtterance("¡Bingo!");
+        utterance.lang = isSpanish ? "es-MX" : "en-US";
+        window.speechSynthesis.speak(utterance);
+        return;
+      }
+
+      // Fallback simple tone
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx) {
+        const ctx = new AudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(880, ctx.currentTime);
+        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.25);
+      }
+    }
+
+    function launchBalloons() {
+      if (balloonsActive) return;
+      balloonsActive = true;
+
+      const overlay = document.createElement("div");
+      overlay.className = "balloon-overlay";
+      document.body.appendChild(overlay);
+
+      const balloonCount = 25;
+      const balloons = [];
+      let remaining = balloonCount;
+
+      const colors = ["color-1", "color-2", "color-3", "color-4", "color-5"];
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+
+      for (let i = 0; i < balloonCount; i++) {
+        const balloon = document.createElement("div");
+        const colorClass = colors[i % colors.length];
+        balloon.className = `balloon ${colorClass}`;
+        overlay.appendChild(balloon);
+
+        const rect = balloon.getBoundingClientRect();
+        const width = rect.width || 60;
+        const height = rect.height || 80;
+
+        let x = Math.random() * (vw - width);
+        let y = Math.random() * (vh - height);
+        let vx = (Math.random() * 0.4 + 0.1) * (Math.random() < 0.5 ? -1 : 1);
+        let vy = (Math.random() * -0.4) - 0.1; // start slightly upwards
+
+        const state = { el: balloon, x, y, vx, vy, width, height, popped: false };
+        balloons.push(state);
+
+        function popBalloon(ev) {
+          ev.stopPropagation();
+          if (state.popped) return;
+          state.popped = true;
+          remaining -= 1;
+          balloon.classList.add("popped");
+          playBingoSound();
+
+          setTimeout(() => {
+            balloon.remove();
+          }, 250);
+
+          if (remaining <= 0) {
+            setTimeout(() => {
+              overlay.remove();
+              balloonsActive = false;
+            }, 400);
+          }
+        }
+
+        balloon.addEventListener("click", popBalloon);
+        balloon.addEventListener(
+          "touchstart",
+          (ev) => {
+            ev.preventDefault();
+            popBalloon(ev);
+          },
+          { passive: false }
+        );
+      }
+
+      const gravity = 0.0006;
+      const bounce = 0.9;
+
+      let lastTime = performance.now();
+      function animate(now) {
+        if (!balloonsActive) return;
+        const dt = now - lastTime;
+        lastTime = now;
+
+        for (const b of balloons) {
+          if (b.popped) continue;
+
+          b.vy += gravity * dt;
+          b.x += b.vx * dt;
+          b.y += b.vy * dt;
+
+          if (b.x <= 0) {
+            b.x = 0;
+            b.vx = Math.abs(b.vx);
+          } else if (b.x + b.width >= vw) {
+            b.x = vw - b.width;
+            b.vx = -Math.abs(b.vx);
+          }
+
+          if (b.y <= 0) {
+            b.y = 0;
+            b.vy = Math.abs(b.vy) * bounce;
+          } else if (b.y + b.height >= vh) {
+            b.y = vh - b.height;
+            b.vy = -Math.abs(b.vy) * bounce;
+          }
+
+          b.el.style.transform = `translate(${b.x}px, ${b.y}px)`;
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame((now) => {
+        lastTime = now;
+        animate(now);
+      });
+    }
+
+    function registerTap() {
+      const now = Date.now();
+      if (!firstTapTime || now - firstTapTime > TAP_WINDOW_MS) {
+        firstTapTime = now;
+        tapCount = 1;
+      } else {
+        tapCount += 1;
+      }
+
+      if (tapCount >= REQUIRED_TAPS) {
+        tapCount = 0;
+        firstTapTime = 0;
+        launchBalloons();
+      }
+    }
+
+    logo.addEventListener("click", registerTap);
+    logo.addEventListener(
+      "touchstart",
+      (e) => {
+        e.preventDefault();
+        registerTap();
+      },
+      { passive: false }
+    );
+  }
 });
