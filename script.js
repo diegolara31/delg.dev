@@ -219,8 +219,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Preload custom Bluey "¡Bingo!" sound if available
   let bingoAudio = null;
   try {
-    // Coloca tu archivo de audio en la raíz (por ejemplo: bingo-bluey.mp3)
-    bingoAudio = new Audio("bingo-bluey.mp3");
+    // Coloca tu archivo de audio en la raíz con el nombre: bingo.mp3
+    bingoAudio = new Audio("bingo.mp3");
   } catch (e) {
     bingoAudio = null;
   }
