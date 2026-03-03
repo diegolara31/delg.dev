@@ -255,20 +255,23 @@ body.spanish .es {
 }
 
 /* For block elements */
-p.es, div.es, h2.es, h3.es {
+p.es,
+div.es,
+h2.es,
+h3.es {
   display: none;
 }
 
-body.spanish p.en, 
-body.spanish div.en, 
-body.spanish h2.en, 
+body.spanish p.en,
+body.spanish div.en,
+body.spanish h2.en,
 body.spanish h3.en {
   display: none;
 }
 
-body.spanish p.es, 
-body.spanish div.es, 
-body.spanish h2.es, 
+body.spanish p.es,
+body.spanish div.es,
+body.spanish h2.es,
 body.spanish h3.es {
   display: block;
 }
@@ -355,8 +358,15 @@ body.spanish h3.es {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .terminal-output {
@@ -461,8 +471,15 @@ body.spanish h3.es {
 }
 
 @keyframes scroll {
-  0% { transform: translate(-50%, 0); opacity: 1; }
-  100% { transform: translate(-50%, 15px); opacity: 0; }
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 15px);
+    opacity: 0;
+  }
 }
 
 .arrow {
@@ -491,9 +508,17 @@ body.spanish h3.es {
 }
 
 @keyframes arrow {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Sections */
@@ -634,31 +659,97 @@ section {
   border-radius: 3px;
 }
 
-/* Projects Section */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+/* Projects Carousel */
+.projects-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.projects-carousel {
+  overflow: hidden;
+  flex: 1;
+  border-radius: 8px;
+}
+
+.projects-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .project-card {
+  min-width: 100%;
+  flex-shrink: 0;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+.project-card .project-content {
   background-color: var(--card-bg);
   border-radius: 8px;
-  overflow: hidden;
-  transition: var(--transition);
-  height: 100%;
-  box-shadow: 0 10px 30px -15px var(--shadow);
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-}
-
-.project-content {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  box-shadow: 0 10px 30px -15px var(--shadow);
+  transition: var(--transition);
+}
+
+.project-card .project-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -15px var(--shadow);
+}
+
+.carousel-btn {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: var(--transition);
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  border-color: var(--primary);
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.carousel-dot.active {
+  background-color: var(--primary);
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  background-color: var(--primary-dark);
 }
 
 .project-header {
@@ -770,28 +861,35 @@ footer p {
   .hero-content {
     gap: 1rem;
   }
-  
+
   .terminal-output p {
     font-size: 1.5rem;
   }
-  
+
   .section-header h2::after {
     width: 150px;
   }
-  
-  .skills-grid,
-  .projects-grid {
+
+  .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
+  .carousel-btn {
+    display: none;
+  }
+
+  .projects-carousel-wrapper {
+    gap: 0;
+  }
+
   nav ul li {
     margin-left: 1rem;
   }
-  
+
   .nav-link {
     font-size: 0.8rem;
   }
-  
+
   .nav-link::before {
     display: none;
   }
@@ -801,31 +899,31 @@ footer p {
   header {
     padding: 0.8rem 0;
   }
-  
+
   .logo {
     font-size: 1.2rem;
   }
-  
+
   .hero-cta {
     flex-direction: column;
   }
-  
+
   .section-header h2 {
     font-size: 1.5rem;
   }
-  
+
   .section-header h2::after {
     width: 100px;
   }
-  
+
   .terminal-body {
     padding: 1rem;
   }
-  
+
   .terminal-output p {
     font-size: 1.2rem;
   }
-  
+
   .scroll-indicator {
     display: none;
   }

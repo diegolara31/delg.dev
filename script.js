@@ -188,9 +188,76 @@ document.addEventListener("DOMContentLoaded", () => {
   
   window.addEventListener("scroll", setActiveLink);
 
+  // Projects Carousel
+  const track = document.querySelector('.projects-track');
+  const cards = document.querySelectorAll('.projects-track .project-card');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  const dots = document.querySelectorAll('.carousel-dot');
+  let currentSlide = 0;
+  let autoPlayInterval;
+
+  function goToSlide(index) {
+    if (index < 0) index = cards.length - 1;
+    if (index >= cards.length) index = 0;
+    currentSlide = index;
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goToSlide(parseInt(dot.dataset.index));
+    });
+  });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const carousel = document.querySelector('.projects-carousel');
+
+  if (carousel) {
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) goToSlide(currentSlide + 1);
+        else goToSlide(currentSlide - 1);
+      }
+    }, { passive: true });
+  }
+
+  // Auto-play
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  startAutoPlay();
+
+  const carouselWrapper = document.querySelector('.projects-carousel-wrapper');
+  if (carouselWrapper) {
+    carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
+    carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+  }
+
   // Add animation to elements when they come into view
   const animateOnScroll = () => {
-    const elements = document.querySelectorAll(".skill-item, .project-card, .terminal-body, .code-snippet");
+    const elements = document.querySelectorAll(".skill-item, .terminal-body, .code-snippet");
 
     elements.forEach((element) => {
       const elementPosition = element.getBoundingClientRect().top;
@@ -204,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Set initial state for animation
-  document.querySelectorAll(".skill-item, .project-card, .terminal-body, .code-snippet").forEach((element) => {
+  document.querySelectorAll(".skill-item, .terminal-body, .code-snippet").forEach((element) => {
     element.style.opacity = 0;
     element.style.transform = "translateY(20px)";
     element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
