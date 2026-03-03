@@ -2,20 +2,18 @@
 name: Diego Eduardo Lara Garcia
 header:
   - text: |
-      <span style="font-size: 1.2em; font-weight: bold;">Estudiante de Ingeniería de Software | Desarrollador Backend</span>
-  - text: <span class="iconify" data-icon="tabler:phone"></span> +52 81 8161 3659
+      &lt;span style="font-size: 1.2em; font-weight: bold;"&gt;Estudiante de Ingeniería de Software | Desarrollador Backend&lt;/span&gt;
+  - text: &lt;span class="iconify" data-icon="tabler:phone"&gt;&lt;/span&gt; +52 81 8161 3659
     newLine: true
-  - text: <span class="iconify" data-icon="tabler:mail"></span> me@delg.dev
+  - text: &lt;span class="iconify" data-icon="tabler:mail"&gt;&lt;/span&gt; me@delg.dev
     link: mailto:me@delg.dev
-  - text: <span class="iconify" data-icon="tabler:world"></span> delg.dev
+  - text: &lt;span class="iconify" data-icon="tabler:world"&gt;&lt;/span&gt; delg.dev
     link: https://delg.dev
-  - text: <span class="iconify" data-icon="tabler:brand-google-play"></span> Portafolio en Google Play
-    link: https://play.google.com/store/apps/developer?id=DELG
 ---
 
 ### Perfil Profesional
 
-Estudiante de Ingeniería de Software con experiencia práctica en desarrollo backend (Node.js, Java), DevOps y desarrollo móvil. Apasionado por la resolución de problemas complejos y la construcción de soluciones eficientes. Busco una oportunidad para aplicar mis habilidades en la construcción de soluciones de software eficientes, escalables y de alto impacto.
+Estudiante de Ingeniería de Software con experiencia práctica en desarrollo backend (Node.js, Java), DevOps y desarrollo web. Apasionado por la resolución de problemas complejos y la construcción de soluciones eficientes. Busco una oportunidad para aplicar mis habilidades en la construcción de soluciones de software eficientes, escalables y de alto impacto.
 
 ### Educación
 
@@ -27,11 +25,11 @@ Ingeniería en Software
 
 ### Proyectos Destacados
 
-[~P1]: **Portafolio de Aplicaciones Android (DELG)**
+[~P1]: **DELG-Code**
 
-    <u>Diego E. Lara Garcia</u> | *Publicado en Google Play Store, 2019 - Presente*
-    - Desarrollé y mantuve un portafolio de más de 3 aplicaciones Android nativas utilizando Java y Kotlin, enfocadas en herramientas de productividad y utilidades.
-    - Gestioné el ciclo de vida completo de las apps, desde la ideación y el desarrollo hasta la publicación y el monitoreo de métricas en la Google Play Console.
+    &lt;u&gt;Diego E. Lara Garcia&lt;/u&gt; | *2024 - Presente*
+    - Un desarrollador de IA en el navegador. Herramienta que permite el desarrollo de código asistido por IA completamente en el browser.
+    - [DELG-Code](https://code.delg.dev)
 
 ### Experiencia
 
@@ -52,15 +50,15 @@ Ingeniería en Software
 
 ### Habilidades
 
-**Lenguajes:** <span class="iconify" data-icon="logos:javascript"></span> JavaScript, <span class="iconify" data-icon="logos:java"></span> Java, <span class="iconify" data-icon="logos:python"></span> Python, <span class="iconify" data-icon="logos:c-plusplus"></span> C++, <span class="iconify" data-icon="logos:mysql"></span> SQL,
+**Lenguajes:** &lt;span class="iconify" data-icon="logos:javascript"&gt;&lt;/span&gt; JavaScript, &lt;span class="iconify" data-icon="logos:java"&gt;&lt;/span&gt; Java, &lt;span class="iconify" data-icon="logos:python"&gt;&lt;/span&gt; Python, &lt;span class="iconify" data-icon="logos:c-plusplus"&gt;&lt;/span&gt; C++, &lt;span class="iconify" data-icon="logos:mysql"&gt;&lt;/span&gt; SQL,
 
-**Backend y Frameworks:** <span class="iconify" data-icon="logos:nodejs-icon">
-</span> Node.js, <span class="iconify" data-icon="logos:bun"></span> Bun, 
-<span class="iconify" data-icon="logos:vue"></span> Vue.js
+**Backend y Frameworks:** &lt;span class="iconify" data-icon="logos:nodejs-icon"&gt;
+&lt;/span&gt; Node.js, &lt;span class="iconify" data-icon="logos:bun"&gt;&lt;/span&gt; Bun, 
+&lt;span class="iconify" data-icon="logos:vue"&gt;&lt;/span&gt; Vue.js
 
-**DevOps, Cloud y Herramientas:** <span class="iconify" data-icon="logos:linux-tux"></span> Linux, <span class="iconify" data-icon="logos:docker-icon"></span> Docker, <span class="iconify" data-icon="logos:kubernetes"></span> Kubernetes, <span class="iconify" data-icon="logos:aws"></span> AWS, <span class="iconify" data-icon="logos:google-cloud"></span> GCP, <span class="iconify" data-icon="logos:digital-ocean"></span> Digital Ocean, <span class="iconify" data-icon="logos:aws-s3"></span> S3, <span class="iconify" data-icon="logos:git-icon"></span> Git, CI/CD
+**DevOps, Cloud y Herramientas:** &lt;span class="iconify" data-icon="logos:linux-tux"&gt;&lt;/span&gt; Linux, &lt;span class="iconify" data-icon="logos:docker-icon"&gt;&lt;/span&gt; Docker, &lt;span class="iconify" data-icon="logos:kubernetes"&gt;&lt;/span&gt; Kubernetes, &lt;span class="iconify" data-icon="logos:aws"&gt;&lt;/span&gt; AWS, &lt;span class="iconify" data-icon="logos:google-cloud"&gt;&lt;/span&gt; GCP, &lt;span class="iconify" data-icon="logos:digital-ocean"&gt;&lt;/span&gt; Digital Ocean, &lt;span class="iconify" data-icon="logos:aws-s3"&gt;&lt;/span&gt; S3, &lt;span class="iconify" data-icon="logos:git-icon"&gt;&lt;/span&gt; Git, CI/CD
 
-**Bases de Datos:** <span class="iconify" data-icon="logos:mongodb-icon"></span> MongoDB,
-<span class="iconify" data-icon="logos:mysql"></span> MySQL
+**Bases de Datos:** &lt;span class="iconify" data-icon="logos:mongodb-icon"&gt;&lt;/span&gt; MongoDB,
+&lt;span class="iconify" data-icon="logos:mysql"&gt;&lt;/span&gt; MySQL
 
 **Idiomas:** Español (Nativo), Inglés (Avanzado - C1)
